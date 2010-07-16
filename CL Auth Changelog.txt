@@ -1,0 +1,50 @@
+BETA v0.2
+----------------
+Date: 13/07/2008
+
+*  Changes
+	o Added: CL_username_chars to config
+	o Added: setUser() in users model.
+	o Added: getProfileField(), getProfile() and setProfile() functions in users model.
+	o Added: last_page to CI_Sessions table
+	o Added: made a standard getUserID() function in CL_Auth
+	o Added: Terms & Conditions checkbox on registration
+	o Added: Generic Terms & Conditions copy. Stored in a view file.
+	o Updated: register_form view
+	o Updated: login_form view
+	o Updated: Auth controller with better code comments, validation functions and general improvements
+	o Changed: The parameters and error messages for functions activate(), reset() and forgotten()
+	o Changed: Completely rewritten login_form() and register_form() functions
+	o Changed: Reduced the number of view files from 18 to 9
+	o Changed: Database collation type from utf8_general_ci to utf8_bin for betetr utf8 support
+	o Changed: Eliminated the need for CL_Validation
+	o Changed: Captcha word length from 8 to 6
+	o Changed: CL_allow_registration now works. Registration can be disabled
+	o Changed: PHP Short tags to full tags in view files incase servers don't support short tags
+	o Changed: Increased maxlength on login input for the login form. Maxlength 30 was too low for users to input their email address as their login.
+	o Changed: username_start() is now known as username_format() for validation.
+	o Changed: username_format() now checks first & last character to prevent malformed usernames.
+	o Changed: getUsers() to getUserField() in users model.
+	o Changed: Object instance from $this->obj to $this->ci in the library class.
+	o Changed: CL_Session is now known as Session
+	o Changed: isGroup() function in CL_Auth can now use arrays "isGroup(array(1,2,3))"
+	o Fixed: Userdata was still present after the logout() function was called.
+	o Fixed: Users who try to login on the logout page are redirected to the index page.
+	o Fixed: denyAccess() now allows the use of group "0".
+	o Removed: CL_Validation library
+	o Removed: CL_val_lang file used by CL_Validation
+* Security
+	o Fixed: If a Users group_id was changed in the database, group_id in the sessions userdata would stay unaffected.
+* Known Bugs
+	o isAdmin() only works if check() has been called on the same page.
+
+
+[BETA] v0.1
+----------------
+Date: 03/05/2008
+
+* Notes
+	o Initial release for public testing
+
+==========================================================================
+Online Change Log: http://www.jasonashdown.co.uk/cl_auth_doc/changelog.php
